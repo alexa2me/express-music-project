@@ -1,0 +1,22 @@
+-- 1. Users
+CREATE TABLE users_fullstack (
+  id VARCHAR(255) PRIMARY KEY,
+  name VARCHAR(255) NOT NULL,
+  nickname VARCHAR(255) UNIQUE NOT NULL,
+  email VARCHAR(255) UNIQUE NOT NULL,
+  password VARCHAR(255) NOT NULL
+);
+
+-- 2. Songs
+CREATE TABLE songs_fullstack (
+  id VARCHAR(255) PRIMARY KEY,
+  title VARCHAR(255) NOT NULL,
+  author VARCHAR(255) NOT NULL,
+  date DATE NOT NULL,
+  file VARCHAR(255) NOT NULL,
+  genre VARCHAR(255) NOT NULL,
+  album VARCHAR(255) NOT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  user_id VARCHAR(255) NOT NULL,
+  FOREIGN KEY(user_id) REFERENCES users_fullstack(id)
+);
