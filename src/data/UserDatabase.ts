@@ -11,6 +11,8 @@ export interface IUserDatabase {
   ): Promise<void>;
 
   getUserByEmail(email: string): Promise<User | undefined>;
+
+  getUserByNickname(nickname: string): Promise<User | undefined>;
 }
 
 export class UserDatabase extends BaseDatabase implements IUserDatabase {
@@ -43,6 +45,19 @@ export class UserDatabase extends BaseDatabase implements IUserDatabase {
       .select("*")
       .from(UserDatabase.TABLE_NAME)
       .where({ email });
+
+    if (!result[0]) {
+      return undefined;
+    }
+
+    return User.toUserModel(result[0]);
+  }
+
+  public async getUserByNickname(nickname: string): Promise<User | undefined> {
+    const result = await this.getConnection()
+      .select("*")
+      .from(UserDatabase.TABLE_NAME)
+      .where({ nickname });
 
     if (!result[0]) {
       return undefined;

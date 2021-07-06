@@ -25,7 +25,7 @@ export class UserValidations {
 
   private validatePassword(password: string) {
     const passwordRegex =
-      /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[$*&@#])[0-9a-zA-Z$*&@#]{6,}$/;
+      /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[$*&@#!])[0-9a-zA-Z$*&@#!]{6,}$/;
     if (!passwordRegex.test(password)) {
       throw new CustomError(
         "The password must have at least six characters with at least one lowercase letter, one uppercase letter, one number and one special character",

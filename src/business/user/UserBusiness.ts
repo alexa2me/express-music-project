@@ -19,6 +19,21 @@ export class UserBusiness extends UserValidations {
   async signUp(user: UserInputDTO) {
     this.validateData(user);
 
+    const userEmailFromDB = await this.userDatabase.getUserByEmail(user.email);
+    if (userEmailFromDB) {
+      throw new CustomError(
+        "Something got wrong, try again later or try another email",
+        422
+      );
+    }
+
+    const userNicknameFromDB = await this.userDatabase.getUserByNickname(
+      user.nickname
+    );
+    if (userNicknameFromDB) {
+      throw new CustomError("Nickname is not available", 422);
+    }
+
     const id = this.idGenerator.generate();
 
     const hashPassword = this.hashManager.hash(user.password);

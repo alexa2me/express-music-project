@@ -4,8 +4,8 @@ Content-Type: application/json
 
 {
     "name": "Hulk 2",
-    "nickname": "hulkinho 2",
-    "email": "hulk-smash@avengers.com",
+    "nickname": "hulkinho",
+    "email": "hul@avengers.com",
     "password": "123Hulk@"
 }
 
