@@ -1,9 +1,23 @@
 ### SIGN UP
-POST http://localhost:3003/signup
+POST http://localhost:3003/users/signup
 Content-Type: application/json
 
 {
-"name": "Hulk", "email": "hulk-smash@avengers.com", "password": "123456", "role": "NORMAL"
+    "name": "Hulk 2",
+    "nickname": "hulkinho 2",
+    "email": "hulk-smash@avengers.com",
+    "password": "123Hulk@"
+}
+
+###
+
+### LOGIN
+POST http://localhost:3003/users/login
+Content-Type: application/json
+
+{
+    "email": "hulk-smash@avengers.com",
+    "password": "123Hulk@"
 }
 
 ###
