@@ -19,18 +19,18 @@ describe("UserBusiness", () => {
 
       try {
         const data: UserInputDTO = {
-          email: "test@mail.com",
+          email: "ravi@mail.com",
           name: "",
           nickname: "",
-          password: "assadas@1132",
+          password: "Ravioli123@",
         };
 
         await userBusinessMock.signUp(data);
       } catch (error) {
-        expect(error.statusCode).toBe(422);
         expect(error.message).toBe(
           "All fields must be filled: 'email', 'name', 'nickname' and 'password'"
         );
+        expect(error.statusCode).toBe(422);
       }
     });
 
@@ -39,16 +39,16 @@ describe("UserBusiness", () => {
 
       try {
         const data: UserInputDTO = {
-          email: "testail.com",
-          name: "teste",
-          nickname: "teste",
-          password: "assadas@1132",
+          email: "ravi.com",
+          name: "ravioli",
+          nickname: "ravi",
+          password: "Ravioli123@",
         };
 
         await userBusinessMock.signUp(data);
       } catch (error) {
-        expect(error.statusCode).toBe(422);
         expect(error.message).toBe("Invalid email");
+        expect(error.statusCode).toBe(422);
       }
     });
 
@@ -57,18 +57,56 @@ describe("UserBusiness", () => {
 
       try {
         const data: UserInputDTO = {
-          email: "test@mail.com",
-          name: "teste",
-          nickname: "teste",
-          password: "assa",
+          email: "ravi@mail.com",
+          name: "ravioli",
+          nickname: "ravi",
+          password: "Ravioli",
         };
 
         await userBusinessMock.signUp(data);
       } catch (error) {
-        expect(error.statusCode).toBe(422);
         expect(error.message).toBe(
           "The password must have at least six characters with at least one lowercase letter, one uppercase letter, one number and one special character"
         );
+        expect(error.statusCode).toBe(422);
+      }
+    });
+
+    test("Should catch error when email is already registered", async () => {
+      expect.assertions(2);
+
+      try {
+        const data: UserInputDTO = {
+          email: "ravi@mail.com",
+          name: "ravi",
+          nickname: "rav",
+          password: "Ravioli123@",
+        };
+
+        await userBusinessMock.signUp(data);
+      } catch (error) {
+        expect(error.message).toBe(
+          "Something got wrong, try again later or try another email"
+        );
+        expect(error.statusCode).toBe(422);
+      }
+    });
+
+    test("Should catch error when nickname is not available", async () => {
+      expect.assertions(2);
+
+      try {
+        const data: UserInputDTO = {
+          email: "ravi2@mail.com",
+          name: "ravi",
+          nickname: "ravi",
+          password: "Ravioli123@",
+        };
+
+        await userBusinessMock.signUp(data);
+      } catch (error) {
+        expect(error.message).toBe("Nickname is not available");
+        expect(error.statusCode).toBe(422);
       }
     });
 
@@ -77,10 +115,10 @@ describe("UserBusiness", () => {
 
       try {
         const data: UserInputDTO = {
-          email: "test@mail.com",
-          name: "teste",
-          nickname: "teste",
-          password: "assA@154",
+          email: "amelie@mail.com",
+          name: "amelie",
+          nickname: "meli",
+          password: "Amelie123@",
         };
 
         const accessToken = await userBusinessMock.signUp(data);
@@ -98,13 +136,13 @@ describe("UserBusiness", () => {
 
       try {
         const data: LoginInputDTO = {
-          email: "astrodev22@mail.com",
-          password: "123456",
+          email: "amelie@mail.com",
+          password: "Amelie123@",
         };
         await userBusinessMock.login(data);
       } catch (error) {
-        expect(error.statusCode).toBe(401);
         expect(error.message).toBe("Invalid credentials");
+        expect(error.statusCode).toBe(401);
       }
     });
 
@@ -119,8 +157,8 @@ describe("UserBusiness", () => {
 
         await userBusinessMock.login(data);
       } catch (error) {
-        expect(error.statusCode).toBe(401);
         expect(error.message).toBe("Invalid credentials");
+        expect(error.statusCode).toBe(401);
       }
     });
 
@@ -130,7 +168,7 @@ describe("UserBusiness", () => {
       try {
         const data: LoginInputDTO = {
           email: "ravi@mail.com",
-          password: "ravioli123",
+          password: "Ravioli123@",
         };
         const accessToken = await userBusinessMock.login(data);
 

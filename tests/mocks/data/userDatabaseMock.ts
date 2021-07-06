@@ -16,6 +16,12 @@ export class UserDatabaseMock implements IUserDatabase {
       return userMock;
     }
   }
+
+  public async getUserByNickname(nickname: string): Promise<User | undefined> {
+    if (nickname === "ravi") {
+      return userMock;
+    }
+  }
 }
 
 export default new UserDatabaseMock();
