@@ -1,18 +1,18 @@
 import * as jwt from "jsonwebtoken";
 
 export interface IAuthenticator {
-  generateToken(input: string, expiresIn?: string): string;
+  generateToken(id: string, expiresIn?: string): string;
   getTokenData(token: string): string;
 }
 
 export class Authenticator implements IAuthenticator {
   public generateToken(
-    input: string,
+    id: string,
     expiresIn: string = process.env.ACCESS_TOKEN_EXPIRES_IN!
   ): string {
     const token = jwt.sign(
       {
-        id: input,
+        id,
       },
       process.env.JWT_KEY as string,
       {
