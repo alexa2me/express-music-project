@@ -21,3 +21,19 @@ Content-Type: application/json
 }
 
 ###
+
+### ADD SONG
+POST http://localhost:3003/music/create
+Content-Type: application/json
+Authorization: 
+
+{
+    "title": ,
+    "author": ,
+    "date": ,
+    "file": ,
+    "genre": ,
+    "album": ,
+}
+
+###

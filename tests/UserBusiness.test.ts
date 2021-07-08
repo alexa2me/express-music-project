@@ -21,7 +21,7 @@ describe("UserBusiness", () => {
         const data: UserInputDTO = {
           email: "ravi@mail.com",
           name: "",
-          nickname: "",
+          nickname: "ravi",
           password: "Ravioli123@",
         };
 
