@@ -2,15 +2,15 @@ import express from "express";
 import { SongController } from "../controller/SongController";
 import { AppRoutes } from "../app";
 
-const userRouter = express.Router();
+const songRouter = express.Router();
 
 const songController = new SongController();
 
-userRouter.post("/create", songController.createSong);
+songRouter.post("/create", songController.createSong);
 
-const userHandle: AppRoutes = {
+const songHandle: AppRoutes = {
   path: "/music",
-  handle: userRouter,
+  handle: songRouter,
 };
 
-export default userHandle;
+export default songHandle;
