@@ -26,4 +26,30 @@ export class SongController {
 
     await BaseDatabase.destroyConnection();
   }
+
+  async getSongs(req: Request, res: Response) {
+    try {
+      const token = req.headers.authorization;
+
+      const songs = await songBusiness.getSongs(token);
+
+      res.status(200).send({ songs });
+    } catch (error) {
+      res.status(400).send({ error: error.message });
+    }
+  }
+
+  async getSongById(req: Request, res: Response) {
+    try {
+      const token = req.headers.authorization;
+
+      const id = req.params.id;
+
+      const song = await songBusiness.getSongById(id, token);
+
+      res.status(200).send({ song });
+    } catch (error) {
+      res.status(400).send({ error: error.message });
+    }
+  }
 }
