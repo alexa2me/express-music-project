@@ -32,8 +32,19 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImZhZjc5Y2UyLTViNmEt
     "author": "faf79ce2-5b6a-4108-96b7-24e93a973145",
     "date": "22/01/2000",
     "file": "Teste",
-    "genre": "Teste",
+    "genre": ["fc5b6545-4333-4ec0-baf3-679185bad31e", "23749753-db8b-444b-af61-6c739d3415ec"],
     "album": "Teste"
+}
+
+###
+
+### ADD GENRE
+POST http://localhost:3003/music/genre
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImZhZjc5Y2UyLTViNmEtNDEwOC05NmI3LTI0ZTkzYTk3MzE0NSIsImlhdCI6MTYyNTc0ODc4OSwiZXhwIjoxNjU3MzA2Mzg5fQ.B4Ww5TmALkl5oAxxQOGgnqwytiUFCg1vhBeV7VrRW-A
+
+{
+    "name": "Pop"
 }
 
 ###
