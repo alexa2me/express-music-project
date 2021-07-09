@@ -23,9 +23,9 @@ export class Authenticator implements IAuthenticator {
   }
 
   public getTokenData(token: string): string {
-    const payload = jwt.verify(token, process.env.JWT_KEY as string) as string;
+    const payload = jwt.verify(token, process.env.JWT_KEY as string) as any;
 
-    return payload;
+    return payload.id;
   }
 }
 
