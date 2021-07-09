@@ -5,7 +5,7 @@ export class Song {
     private author: string,
     private date: string,
     private file: string,
-    private genre: string,
+    private genre: string[],
     private album: string
   ) {}
 
@@ -57,7 +57,7 @@ export class Song {
     this.file = file;
   }
 
-  setGenre(genre: string) {
+  setGenre(genre: string[]) {
     this.genre = genre;
   }
 
@@ -79,13 +79,15 @@ export class Song {
 
   public songToDatabase(): SongDataDTO {
     return {
-      id: this.id,
-      title: this.title,
-      author: this.author,
-      date: this.date,
-      file: this.file,
+      data: {
+        id: this.id,
+        title: this.title,
+        author: this.author,
+        date: this.date,
+        file: this.file,
+        album: this.album,
+      },
       genre: this.genre,
-      album: this.album,
     };
   }
 }
@@ -95,16 +97,15 @@ export interface SongInputDTO {
   author: string;
   date: string;
   file: string;
-  genre: string;
+  genre: string[];
   album: string;
 }
 
 export interface SongDataDTO {
+  data: Omit<SongData, "genre">;
+  genre: string[];
+}
+
+export interface SongData extends SongInputDTO {
   id: string;
-  title: string;
-  author: string;
-  date: string;
-  file: string;
-  genre: string;
-  album: string;
 }
