@@ -26,7 +26,7 @@ export default class App {
   }
 
   private router(): void {
-    this.routes.map((route) => {
+    this.routes.forEach((route) => {
       this.express.use(route.path, route.handle);
     });
   }
