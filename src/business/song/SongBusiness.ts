@@ -38,12 +38,28 @@ export class SongBusiness extends SongValidations {
     return "Song created successfully!";
   }
 
-  private validateToken(token: string | undefined) {
+  async getSongs(token: string | undefined) {
+    const id = this.validateToken(token);
+
+    const songs = await this.songDatabase.getSongs(id);
+
+    return songs;
+  }
+
+  async getSongById(id: string, token: string | undefined) {
+    this.validateToken(token);
+
+    const song = await this.songDatabase.getSongById(id);
+
+    return song;
+  }
+
+  private validateToken(token: string | undefined): string {
     if (!token) {
       throw new CustomError("Unauthorized", 401);
     }
 
-    this.authenticator.getTokenData(token);
+    return this.authenticator.getTokenData(token);
   }
 
   private formatInputData(data: string): string {
