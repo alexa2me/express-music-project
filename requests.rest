@@ -28,11 +28,11 @@ Content-Type: application/json
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImZhZjc5Y2UyLTViNmEtNDEwOC05NmI3LTI0ZTkzYTk3MzE0NSIsImlhdCI6MTYyNTc0ODc4OSwiZXhwIjoxNjU3MzA2Mzg5fQ.B4Ww5TmALkl5oAxxQOGgnqwytiUFCg1vhBeV7VrRW-A
 
 {
-    "title": "A new day has come",
+    "title": "Funk do Zulinhus",
     "author": "faf79ce2-5b6a-4108-96b7-24e93a973145",
     "date": "22/01/2000",
     "file": "Teste",
-    "genre": ["fc5b6545-4333-4ec0-baf3-679185bad31e", "23749753-db8b-444b-af61-6c739d3415ec"],
+    "genre": ["fc5b6545-4333-4ec0-baf3-679185bad31e"],
     "album": "Teste"
 }
 
@@ -46,5 +46,19 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImZhZjc5Y2UyLTViNmEt
 {
     "name": "Pop"
 }
+
+###
+
+### GET ALL SONGS
+GET http://localhost:3003/music/
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImZhZjc5Y2UyLTViNmEtNDEwOC05NmI3LTI0ZTkzYTk3MzE0NSIsImlhdCI6MTYyNTc0ODc4OSwiZXhwIjoxNjU3MzA2Mzg5fQ.B4Ww5TmALkl5oAxxQOGgnqwytiUFCg1vhBeV7VrRW-A
+
+###
+
+### GET SONG BY ID
+GET http://localhost:3003/music/93584f3d-4d36-4eba-a39f-db69f7a8cb42
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImZhZjc5Y2UyLTViNmEtNDEwOC05NmI3LTI0ZTkzYTk3MzE0NSIsImlhdCI6MTYyNTc0ODc4OSwiZXhwIjoxNjU3MzA2Mzg5fQ.B4Ww5TmALkl5oAxxQOGgnqwytiUFCg1vhBeV7VrRW-A
 
 ###
