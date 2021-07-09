@@ -3,6 +3,7 @@ import { CustomError } from "../../error/CustomError";
 import { Song, SongInputDTO } from "../../model/Song";
 import authenticator, { IAuthenticator } from "../../services/Authenticator";
 import idGenerator, { IIdGenerator } from "../../services/IdGenerator";
+import dateWithoutTime from "../../utils/formatData";
 import { SongValidations } from "./SongValidations";
 
 export class SongBusiness extends SongValidations {
@@ -43,7 +44,12 @@ export class SongBusiness extends SongValidations {
 
     const songs = await this.songDatabase.getSongs(id);
 
-    return songs;
+    return songs.map((item) => {
+      return {
+        ...item,
+        date: dateWithoutTime(item.getDate()),
+      };
+    });
   }
 
   async getSongById(id: string, token: string | undefined) {
@@ -51,7 +57,7 @@ export class SongBusiness extends SongValidations {
 
     const song = await this.songDatabase.getSongById(id);
 
-    return song;
+    return { ...song, date: dateWithoutTime(song.getDate()) };
   }
 
   private validateToken(token: string | undefined): string {

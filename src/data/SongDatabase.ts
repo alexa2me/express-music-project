@@ -1,4 +1,4 @@
-import { Song, SongData, SongDataDTO } from "../model/Song";
+import { Song, SongDataDTO } from "../model/Song";
 import { BaseDatabase } from "./BaseDatabase";
 
 export interface ISongDatabase {
@@ -91,7 +91,7 @@ export class SongDatabase extends BaseDatabase implements ISongDatabase {
         throw new Error("Song not found");
       }
 
-      return data;
+      return Song.toSongModel(data);
     } catch (error) {
       throw new Error(error.sqlMessage || error.message);
     }
