@@ -39,7 +39,7 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImZhZjc5Y2UyLTViNmEt
 ###
 
 ### ADD GENRE
-POST http://localhost:3003/music/genre
+POST http://localhost:3003/music/genre/create
 Content-Type: application/json
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImZhZjc5Y2UyLTViNmEtNDEwOC05NmI3LTI0ZTkzYTk3MzE0NSIsImlhdCI6MTYyNTc0ODc4OSwiZXhwIjoxNjU3MzA2Mzg5fQ.B4Ww5TmALkl5oAxxQOGgnqwytiUFCg1vhBeV7VrRW-A
 
@@ -58,6 +58,13 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImZhZjc5Y2UyLTViNmEt
 
 ### GET SONG BY ID
 GET http://localhost:3003/music/93584f3d-4d36-4eba-a39f-db69f7a8cb42
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImZhZjc5Y2UyLTViNmEtNDEwOC05NmI3LTI0ZTkzYTk3MzE0NSIsImlhdCI6MTYyNTc0ODc4OSwiZXhwIjoxNjU3MzA2Mzg5fQ.B4Ww5TmALkl5oAxxQOGgnqwytiUFCg1vhBeV7VrRW-A
+
+###
+
+### GET GENRES
+GET http://localhost:3003/music/genres/get
 Content-Type: application/json
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImZhZjc5Y2UyLTViNmEtNDEwOC05NmI3LTI0ZTkzYTk3MzE0NSIsImlhdCI6MTYyNTc0ODc4OSwiZXhwIjoxNjU3MzA2Mzg5fQ.B4Ww5TmALkl5oAxxQOGgnqwytiUFCg1vhBeV7VrRW-A
 

@@ -23,6 +23,14 @@ export class GenreBusiness {
     return "Genre created successfully!";
   }
 
+  async getGenres(token: string | undefined) {
+    this.validateToken(token);
+
+    const genres = await this.genreDatabase.getGenres();
+
+    return genres;
+  }
+
   private validateToken(token: string | undefined) {
     if (!token) {
       throw new CustomError("Unauthorized", 401);
