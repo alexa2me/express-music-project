@@ -19,7 +19,7 @@ export class GenreController {
       res.status(400).send({ error: error.message });
     }
 
-    await BaseDatabase.destroyConnection();
+    // await BaseDatabase.destroyConnection();
   }
 
   async getGenres(req: Request, res: Response) {
@@ -33,6 +33,6 @@ export class GenreController {
       res.status(400).send({ error: error.message });
     }
 
-    await BaseDatabase.destroyConnection();
+    // await BaseDatabase.destroyConnection();
   }
 }
