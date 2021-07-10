@@ -6,7 +6,8 @@ const genreRouter = express.Router();
 
 const genreController = new GenreController();
 
-genreRouter.post("/genre", genreController.createGenre);
+genreRouter.post("/genre/create", genreController.createGenre);
+genreRouter.get("/genres/get", genreController.getGenres);
 
 const genreHandle: AppRoutes = {
   path: "/music",

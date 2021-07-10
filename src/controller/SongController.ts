@@ -37,6 +37,8 @@ export class SongController {
     } catch (error) {
       res.status(400).send({ error: error.message });
     }
+
+    await BaseDatabase.destroyConnection();
   }
 
   async getSongById(req: Request, res: Response) {
@@ -51,5 +53,7 @@ export class SongController {
     } catch (error) {
       res.status(400).send({ error: error.message });
     }
+
+    await BaseDatabase.destroyConnection();
   }
 }

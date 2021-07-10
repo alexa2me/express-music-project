@@ -3,16 +3,21 @@ import { CustomError } from "../../error/CustomError";
 import { Genre, GenreInputDTO } from "../../model/Genre";
 import authenticator, { IAuthenticator } from "../../services/Authenticator";
 import idGenerator, { IIdGenerator } from "../../services/IdGenerator";
+import { GenreValidations } from "./GenreValidations";
 
-export class GenreBusiness {
+export class GenreBusiness extends GenreValidations {
   constructor(
     private authenticator: IAuthenticator,
     private idGenerator: IIdGenerator,
     private genreDatabase: IGenreDatabase
-  ) {}
+  ) {
+    super();
+  }
 
   async createGenre(genre: GenreInputDTO, token: string | undefined) {
     this.validateToken(token);
+
+    this.validateGenre(genre);
 
     const id = this.idGenerator.generate();
 
@@ -21,6 +26,14 @@ export class GenreBusiness {
     await this.genreDatabase.createGenre(newGenre.genreToDatabase());
 
     return "Genre created successfully!";
+  }
+
+  async getGenres(token: string | undefined) {
+    this.validateToken(token);
+
+    const genres = await this.genreDatabase.getGenres();
+
+    return genres;
   }
 
   private validateToken(token: string | undefined) {

@@ -19,6 +19,20 @@ export class GenreController {
       res.status(400).send({ error: error.message });
     }
 
-    await BaseDatabase.destroyConnection();
+    // await BaseDatabase.destroyConnection();
+  }
+
+  async getGenres(req: Request, res: Response) {
+    try {
+      const token = req.headers.authorization;
+
+      const genres = await genreBusiness.getGenres(token);
+
+      res.status(200).send({ genres });
+    } catch (error) {
+      res.status(400).send({ error: error.message });
+    }
+
+    // await BaseDatabase.destroyConnection();
   }
 }

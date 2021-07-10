@@ -4,9 +4,9 @@ Content-Type: application/json
 
 {
     "name": "Hulk 2",
-    "nickname": "hulkinho",
-    "email": "hul@avengers.com",
-    "password": "123Hulk@"
+    "nickname": "ssgdg",
+    "email": "hulk@avengers.com",
+    "password": "123Hulk!"
 }
 
 ###
@@ -17,7 +17,7 @@ Content-Type: application/json
 
 {
     "email": "hulk-smash@avengers.com",
-    "password": "123Hulk@"
+    "password": "123Hul"
 }
 
 ###
@@ -28,7 +28,7 @@ Content-Type: application/json
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImZhZjc5Y2UyLTViNmEtNDEwOC05NmI3LTI0ZTkzYTk3MzE0NSIsImlhdCI6MTYyNTc0ODc4OSwiZXhwIjoxNjU3MzA2Mzg5fQ.B4Ww5TmALkl5oAxxQOGgnqwytiUFCg1vhBeV7VrRW-A
 
 {
-    "title": "Funk do Zulinhus",
+    "title": "Teste",
     "author": "faf79ce2-5b6a-4108-96b7-24e93a973145",
     "date": "22/01/2000",
     "file": "Teste",
@@ -39,12 +39,12 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImZhZjc5Y2UyLTViNmEt
 ###
 
 ### ADD GENRE
-POST http://localhost:3003/music/genre
+POST http://localhost:3003/music/genre/create
 Content-Type: application/json
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImZhZjc5Y2UyLTViNmEtNDEwOC05NmI3LTI0ZTkzYTk3MzE0NSIsImlhdCI6MTYyNTc0ODc4OSwiZXhwIjoxNjU3MzA2Mzg5fQ.B4Ww5TmALkl5oAxxQOGgnqwytiUFCg1vhBeV7VrRW-A
 
 {
-    "name": "Pop"
+    "name": ""
 }
 
 ###
@@ -56,8 +56,15 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImZhZjc5Y2UyLTViNmEt
 
 ###
 
+### GET GENRES
+GET http://localhost:3003/music/genres/get/
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImZhZjc5Y2UyLTViNmEtNDEwOC05NmI3LTI0ZTkzYTk3MzE0NSIsImlhdCI6MTYyNTc0ODc4OSwiZXhwIjoxNjU3MzA2Mzg5fQ.B4Ww5TmALkl5oAxxQOGgnqwytiUFCg1vhBeV7VrRW-A
+
+###
+
 ### GET SONG BY ID
-GET http://localhost:3003/music/93584f3d-4d36-4eba-a39f-db69f7a8cb42
+GET http://localhost:3003/music/93584f3-4d36-4eba-a39f-db69f7a8cb42
 Content-Type: application/json
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImZhZjc5Y2UyLTViNmEtNDEwOC05NmI3LTI0ZTkzYTk3MzE0NSIsImlhdCI6MTYyNTc0ODc4OSwiZXhwIjoxNjU3MzA2Mzg5fQ.B4Ww5TmALkl5oAxxQOGgnqwytiUFCg1vhBeV7VrRW-A
 
