@@ -102,12 +102,12 @@ In open endpoints authentication isn't necessary.
 
 In authenticated endpoints a valid token is necessary in the header of the request and it can be acquired by doing login in the above endpoint Login.
 
-#### :microphone: Genre related
+#### 👯 Genre related
 
 :small_blue_diamond: [Add genre](apidocs/responses_examples/genre/add_genre.md): `POST /music/genre/create/`<br>
 :small_blue_diamond: [Get genres](apidocs/responses_examples/genre/get_genres.md): `GET /music/genres/get/`<br>
 
-#### :notebook: Song related
+#### 🎶 Song related
 
 :small_blue_diamond: [Add songs](apidocs/responses_examples/song/add_song.md): `POST /music/create/`<br>
 :small_blue_diamond: [Get all songs](apidocs/responses_examples/song/get_all_songs.md): `GET /music/`<br>
