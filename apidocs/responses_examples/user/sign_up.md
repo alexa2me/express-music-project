@@ -4,7 +4,7 @@ Used for creating a new user.
 
 Notice that password must contain at least **6 characters** with at least **one lowercase letter**, **one uppercase letter**, **one number** and **one special character**, that's a strong password, isn't it? :D
 
-**URL** : `/users/signup/`
+**URL** : `http://ec2-52-91-118-16.compute-1.amazonaws.com/users/signup/`
 
 **Method** : `POST`
 
