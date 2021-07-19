@@ -2,7 +2,7 @@
 
 Used for adding a new genre.
 
-**URL** : `/music/genre/create/`
+**URL** : `http://ec2-52-91-118-16.compute-1.amazonaws.com/music/genre/create/`
 
 **Method** : `POST`
 
