@@ -2,7 +2,7 @@
 
 Used for getting songs by id.
 
-**URL** : `/music/:id/`
+**URL** : `http://ec2-52-91-118-16.compute-1.amazonaws.com/music/:id/`
 
 **Method** : `GET`
 
