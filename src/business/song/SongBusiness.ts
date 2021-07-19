@@ -16,7 +16,7 @@ export class SongBusiness extends SongValidations {
   }
 
   async createSong(song: SongInputDTO, token: string | undefined) {
-    this.validateToken(token);
+    const author = this.validateToken(token);
 
     this.validateSong(song);
 
@@ -27,7 +27,7 @@ export class SongBusiness extends SongValidations {
     const newSong = new Song(
       id,
       song.title,
-      song.author,
+      author,
       date,
       song.file,
       song.genre,

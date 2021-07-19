@@ -94,7 +94,6 @@ export class Song {
 
 export interface SongInputDTO {
   title: string;
-  author: string;
   date: string;
   file: string;
   genre: string[];
@@ -108,4 +107,5 @@ export interface SongDataDTO {
 
 export interface SongData extends SongInputDTO {
   id: string;
+  author: string;
 }

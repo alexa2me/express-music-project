@@ -10,7 +10,6 @@ export class SongController {
 
       const input: SongInputDTO = {
         title: req.body.title,
-        author: req.body.author,
         date: req.body.date,
         file: req.body.file,
         genre: req.body.genre,
